@@ -3,24 +3,96 @@
   width: 100%;
   height: 100%;
   display: inline-block;
+  z-index: 10;
 }
 .filecontent{
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   width: 100%;
-  height: 100vh;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
+}
+.filecontent[drop="true"]{
+  box-shadow: 0px 0px 39px 17px rgba(0, 255, 0,.5);
 }
 .filecontent::before{
-  background-color: #5678EF;
+  background-color: rgb(27, 27, 27);
+  border: 1px solid rgba(0, 255, 0, 0.253);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 3px;
-  content: 'Seleccionar'; /* testo por defecto */
+  border-radius: 2px;
+  content: ''; /* testo por defecto */
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+}
+.main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.uno{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.dos{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8%;
+  border-radius: 2px;
+  background-color: rgba(0, 255, 0,.253);
+  text-align: center;
+}
+.google{
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.658);
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 16px 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.textodentro{
+  position: absolute;
+  text-transform: uppercase;
+  user-select: none;
+  text-align: center;
+}
+.separacion{
+  margin: 16px 0px;
+
+  height: 1px;
+  width: 100%;
+  background-color: #ffffff54;
+}
+@media (max-width: 414px) {
+  .main {
+    flex-direction: column-reverse;
+  }
+  .dos{
+    width: 60%;
+    height: auto;
+  }
 }
